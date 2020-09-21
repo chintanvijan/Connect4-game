@@ -1,0 +1,49 @@
+Instructions to run - 
+
+Install python 3.6
+
+and pip install all the packages from 'requirements.txt' file.
+
+
+Go to console -
+
+Move to the project directory containing manage.py file .
+
+Run commands -
+python manage.py makemigrations
+python manage.py migrate                // For creating database
+python manage.py runserver
+
+
+Note : By Default we are using Sqlite Database , you can change database configuartion from settings.py file 
+which is present in Connect4 directory.
+After changing the database configuaration run migrations command again.
+
+
+After running 'python manage.py runserver' command , open your browser and navigate to 'http:localhost:8000'.
+
+
+For loginning into admin panel -
+Run command - 
+python manage.py createsuperuser
+(Set your admin Credentials) 
+Navigate to -
+localhost:8000/admin
+
+And login.
+
+This application contains some of the advanced mentioned features too like-
+
+Each game is assigned a particular id , so multiple games can be played together.
+
+Results of each game is stored into the database , which can be viewed through admin panel.
+
+Due to time shortage algorithm for storing player's moves is not made, but its model in admin panel is available.
+
+Json response for each game can be seen by posting a GET Request on url containing game id.
+
+For.eg. if game id is 23:
+Its result will be shown at url - '/23'
+
+Site is currently running live on-
+http://connect4-game.herokuapp.com
